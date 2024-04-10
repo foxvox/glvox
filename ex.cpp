@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutCreateWindow("Test");
-	glutDisplayFunc(mydisplay);
+	glutDisplayFunc(mydisplay);  
 	glutMainLoop();
 
 	return 0;
