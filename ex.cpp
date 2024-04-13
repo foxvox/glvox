@@ -1,6 +1,6 @@
 #include <GL/glut.h> 
 
-void mydisplay()
+static void MyDisplay()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_POLYGON);
@@ -14,9 +14,9 @@ void mydisplay()
 
 int main(int argc, char* argv[])
 {
-	glutInit(&argc, argv);
-	glutCreateWindow("Test");
-	glutDisplayFunc(mydisplay);  
+	glutInit_ATEXIT_HACK(&argc, argv);
+	glutCreateWindow("YES");
+	glutDisplayFunc(MyDisplay);  
 	glutMainLoop();
 
 	return 0;
