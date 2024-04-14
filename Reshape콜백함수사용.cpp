@@ -23,7 +23,7 @@ static void MyDisplay()
 	}
 	else if (mode == 1)
 	{
-		glutSolidTeapot((GLfloat)0.6);
+		glutWireTeapot((GLfloat)0.6);
 	}		
 
 	glFlush();
