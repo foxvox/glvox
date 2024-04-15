@@ -2,8 +2,8 @@
 #include <GL/GLU.h> 
 #include <GL/GL.h> 
 
-#define _WINDOW_WIDTH 500
-#define _WINDOW_HEIGHT 500
+#define _WINDOW_WIDTH	500
+#define _WINDOW_HEIGHT	500
 
 int mode = 0;
 

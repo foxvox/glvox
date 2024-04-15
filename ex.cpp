@@ -2,8 +2,8 @@
 #include <GL/GLU.h> 
 #include <GL/GL.h> 
 
-#define _WINDOW_WIDTH 500
-#define _WINDOW_HEIGHT 500
+#define _WINDOW_WIDTH	500
+#define _WINDOW_HEIGHT	500
 
 int mode = 0;
 
@@ -12,25 +12,18 @@ static void MyDisplay()
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.5, 0.5, 0.5);
 
-	if (mode == 0)
-	{
-		glBegin(GL_POLYGON);
-		glVertex3f(-0.5, -0.5, 0.0);
-		glVertex3f( 0.5, -0.5, 0.0);
-		glVertex3f( 0.5,  0.5, 0.0);
-		glVertex3f(-0.5,  0.5, 0.0);
-		glEnd();
-	}
-	else if (mode == 1)
-	{
-		glutWireTeapot((GLfloat)0.5);
-	}
+	glutWireTeapot(0.5); 
+	
+	glBegin(GL_POLYGON);
+	glEnd(); 
+
 
 	glFlush();
 }
 
 static void MyKeyboard(unsigned char keyPressed, int x, int y)
 {
+	/*
 	switch (keyPressed)
 	{
 	case 'a':
@@ -50,6 +43,7 @@ static void MyKeyboard(unsigned char keyPressed, int x, int y)
 		break;
 	}
 	glutPostRedisplay(); 
+	*/
 }
 
 static void MyReshape(int newWidth, int newHeight)
@@ -65,16 +59,17 @@ static void MyReshape(int newWidth, int newHeight)
 
 int main(int argc, char* argv[])
 {
-	glutInit_ATEXIT_HACK(&argc, argv);
+	glutInit_ATEXIT_HACK(&argc, argv);	
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(_WINDOW_WIDTH, _WINDOW_HEIGHT);
-	glutInitWindowPosition(100, 100);
+	glutInitWindowPosition(200, 200);
 	glutCreateWindow_ATEXIT_HACK("OpenGL Drawing Example");
-	glClearColor(0.0, 0.0, 0.0, 1.0);
+	
+	glClearColor(1.0, 1.0, 1.0, 1.0);
 
 	glutDisplayFunc(MyDisplay);
 	glutReshapeFunc(MyReshape);
-	glutKeyboardFunc(MyKeyboard);
+	//glutKeyboardFunc(MyKeyboard);
 
 	glutMainLoop();
 
